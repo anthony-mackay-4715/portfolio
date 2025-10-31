@@ -75,7 +75,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 st.divider()
 
 # Projects Section
-st.markdown("## 🚀 Featured Projects")
+st.markdown("## Featured Projects")
 
 # Project 1
 with st.container():
@@ -83,7 +83,7 @@ with st.container():
     col1, col2 = st.columns([2, 1])
     
     with col1:
-        st.markdown("### 📊 Luxury Watch Pricing Analysis Dashboard")
+        st.markdown("### Luxury Watch Pricing Analysis Dashboard")
         st.markdown("""
         A comprehensive data visualization dashboard built with Python and Streamlit. 
         This project analyzes luxury watch prices from a popular reselling site and provides interactive visualizations 
@@ -109,7 +109,7 @@ with st.container():
     col1, col2 = st.columns([2, 1])
     
     with col1:
-        st.markdown("### 🤖 Bitcoin Price Prediction Machine Learning Model")
+        st.markdown("### Bitcoin Price Prediction Machine Learning Model")
         st.markdown("""
         A machine learning model that predicts Bitcoin prices using historical data.
         The model achieves a daily mean absolute error of < $100 on the test set.
