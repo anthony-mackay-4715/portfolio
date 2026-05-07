@@ -23,12 +23,10 @@ st.markdown("""
         color: #666;
         margin-bottom: 2rem;
     }
-    .project-card {
-        padding: 1.5rem;
-        border-radius: 10px;
-        background-color: #f0f2f6;
-        margin-bottom: 2rem;
-        color: #1a1a2e;
+    .thin-divider {
+        border: none;
+        border-top: 1px solid #d0d4dc;
+        margin: 1rem 0;
     }
     .project-title {
         font-size: 1.5rem;
@@ -90,16 +88,14 @@ with col_bio:
             )
     except FileNotFoundError:
         st.info("Add your resume as 'resume.pdf' in the project directory to enable the download button.")
-st.markdown('</div>', unsafe_allow_html=True)
 
-st.divider()
+st.markdown('<hr class="thin-divider">', unsafe_allow_html=True)
 
 # Projects Section
 st.markdown("## Featured Projects")
 
 # Project 1 — Luxury Watch Pricing
-with st.container():
-    st.markdown('<div class="project-card">', unsafe_allow_html=True)
+with st.container(border=True):
     col1, col2 = st.columns([2, 1])
 
     with col1:
@@ -131,11 +127,9 @@ with st.container():
         st.markdown("#### Project Repository")
         st.link_button("📁 GitHub Repository", "https://github.com/anthony-mackay-4715/data-360-final-proj")
 
-    st.markdown('</div>', unsafe_allow_html=True)
 
 # Project 2 — Bitcoin ML Model
-with st.container():
-    st.markdown('<div class="project-card">', unsafe_allow_html=True)
+with st.container(border=True):
     col1, col2 = st.columns([2, 1])
 
     with col1:
@@ -165,11 +159,9 @@ with st.container():
         st.markdown("#### Project Repository")
         st.link_button("📁 GitHub Repository", "https://github.com/anthony-mackay-4715/BTC-Machine-Learning-Model")
 
-    st.markdown('</div>', unsafe_allow_html=True)
 
 # Project 3 — Senior Capstone: Algo Trading Platform
-with st.container():
-    st.markdown('<div class="project-card">', unsafe_allow_html=True)
+with st.container(border=True):
     col1, col2 = st.columns([2, 1])
 
     with col1:
@@ -202,11 +194,9 @@ with st.container():
         </div>
         """, unsafe_allow_html=True)
 
-    st.markdown('</div>', unsafe_allow_html=True)
 
 # Project 4 — Jungle Jump
-with st.container():
-    st.markdown('<div class="project-card">', unsafe_allow_html=True)
+with st.container(border=True):
     col1, col2 = st.columns([2, 1])
 
     with col1:
@@ -233,11 +223,9 @@ with st.container():
         </div>
         """, unsafe_allow_html=True)
 
-    st.markdown('</div>', unsafe_allow_html=True)
 
 # Project 5 — Borrower/Lender Recommendation (SVD)
-with st.container():
-    st.markdown('<div class="project-card">', unsafe_allow_html=True)
+with st.container(border=True):
     col1, col2 = st.columns([2, 1])
 
     with col1:
@@ -267,10 +255,43 @@ with st.container():
         </div>
         """, unsafe_allow_html=True)
 
-    st.markdown('</div>', unsafe_allow_html=True)
+
+# Project 6 — Road Accident Risk Prediction (ML Final)
+with st.container(border=True):
+    col1, col2 = st.columns([2, 1])
+
+    with col1:
+        st.markdown("### Road Accident Risk Prediction Model — Machine Learning Final Project")
+        st.markdown("""
+        A machine learning project built for Westminster University's Machine Learning course.
+        The goal was to predict a continuous accident risk score between 0 and 1 for a given road,
+        using features such as speed limit, road curvature, weather, lighting, and time of day.
+        Both a Linear Regression and a Gradient Boosting regressor were implemented from scratch without relying on library implementations.
+
+        **Technologies:** Python, NumPy, Pandas, Scikit-learn
+
+        **Key Features:**
+        - Custom gradient descent Linear Regression implementation built from scratch
+        - Custom Gradient Boosting regressor built from scratch using decision tree residual fitting
+        - Feature engineering with interaction terms (speed + weather, curvature + lighting, etc.)
+        - One-hot encoding and standard scaling pipeline for mixed-type feature sets
+        """)
+        st.markdown("""
+        <div class="reflection-box">
+        <strong>Reflections & Lessons Learned</strong><br><br>
+        The most valuable constraint in this project was implementing both models from scratch rather than calling a library function.
+        Writing gradient descent by hand forced me to confront exactly why feature scaling matters: my first runs produced NaN weights
+        because unscaled features caused the gradients to explode, and no amount of reading about it would have made that lesson stick the way debugging it did.
+        Building the Gradient Boosting regressor from the ground up deepened my understanding of how ensemble methods work at a mechanical level,
+        specifically how iterative residual fitting compounds weak learners into a strong predictor.
+        Feature engineering was the other area where I invested significant effort, and the interaction terms I constructed (such as speed in poor lighting and curvature in bad weather) meaningfully improved model performance.
+        Overall this project gave me a much stronger intuition for the gap between knowing an algorithm conceptually and being able to implement it reliably under real data conditions.
+        </div>
+        """, unsafe_allow_html=True)
+
 
 # Footer
-st.divider()
+st.markdown('<hr class="thin-divider">', unsafe_allow_html=True)
 st.markdown("""
     <div style='text-align: center; color: #666;'>
         <p>Built with Streamlit | © 2025 Anthony Mackay</p>
